@@ -4,19 +4,32 @@ package Seminar1;
 /**
  * task1
  */
-public class task2{
 
-public static void main(String[] args) {
-    int[] arr= new int[1000];
-    int a=1;
-    
-    for(int i=0; i< arr.length; i++){
-        arr[i]=a;
-        a++;
-    }
-    for (int i=0; i<arr.length; i++)   
-    {  
-    System.out.println(arr[i]);
-}
-}
-}
+// Вывести все простые числа от 1 до 1000
+
+ import java.util.ArrayList;
+ import java.util.List;
+ import java.util.Scanner;
+
+ public class task2{
+     public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+           int n = 1000;
+         scanner.close();
+         List<Integer> primes = new ArrayList<>();
+        for (int i = 2; i <= n; i++) {
+             boolean isPrimeNumber = true;
+            for (int j = 2; j < i; j++) {
+                 if (i % j == 0) {
+                     isPrimeNumber = false;
+                     break;
+                 }
+             }
+
+             if (isPrimeNumber) {
+                 primes.add(i);
+             }
+         }
+         System.out.println("Простые числа: " + primes);
+     }
+ }
